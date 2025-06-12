@@ -28,7 +28,7 @@
   - JSON output format for queries
 
 ## Task 4: Update Mode Rules
-- [ ] **LLM Prompt:** "Add vector query instructions to architect-senior rules"
+- [x] **LLM Prompt:** "Add vector query instructions to architect-senior rules"
 - **Verification:** architect-senior rules include vector query step
 
 ## Task 5: Add Vector-Updater Mode
