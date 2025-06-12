@@ -11,7 +11,7 @@
   ```
 
 ## Task 2: Setup Package Management
-- [ ] **LLM Prompt:** "Initialize package.json/requirements.txt"
+- [x] **LLM Prompt:** "Initialize package.json/requirements.txt"
 - **Verification:** File exists with basic metadata
 
 ## Task 3: Configure Linting/Formatting

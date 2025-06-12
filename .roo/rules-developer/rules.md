@@ -61,9 +61,9 @@ If the failing task is from a `FIX_PLAN.md` file, this indicates a deep strategi
         *   `## Failed Fix Attempt:` (Paste the contents of the `FIX_PLAN.md`).
         *   `## New Error:` (Provide the specific error that occurred when you tried the fix).
 4.  **Clean Up State:** Delete the failed `FIX_PLAN.md` file and the original `NEEDS_ASSISTANCE.md` file.
-5.  **Handoff to Leadership:** s witch mode: `<mode>orchestrator-senior</mode>`.
+5.  **Handoff to Leadership:** switch mode: `<mode>orchestrator-senior</mode>`.
 
 ## 7. CRITICAL DIRECTIVES
 *   **NO `attempt_completion`:** This tool is forbidden. Your job is to execute a plan or signal failure. There is no other state.
-*   **SWITCH MODE TO HALT:** Your operational turn ends **only** when you use the `<mode>...` command.
+*   **SWITCH MODE TO HALT:** Your operational turn ends **only** when you switch `<mode>...` command.
 *   **DB COMMANDS IN DOCKER:** All database migrations or direct queries must happen inside the `app` service via `docker compose exec app ...`.
