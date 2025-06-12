@@ -20,7 +20,7 @@
   - Vector upsert to Qdrant
 
 ## Task 3: Create vector_tool.py
-- [ ] **LLM Prompt:** "Implement vector_tool.py with update and query commands"
+- [x] **LLM Prompt:** "Implement vector_tool.py with update and query commands"
 - **Verification:** Supports both `update` and `query` subcommands
 - **Code Requirements:** Must include:
   - File update functionality that replaces old vectors
