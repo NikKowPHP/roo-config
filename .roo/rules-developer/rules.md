@@ -19,7 +19,7 @@ Your operation follows a two-tiered loop. Adherence is mandatory.
 4.  **Extract Plan Path:** From the **Active Target** line, extract the file path (e.g., `/documentation/2_development_plan/dev_todo_phase_2.md`). This is your **Active Plan**.
 5.  **Announce:** "Now executing master roadmap task: [Active Target line]".
 6.  **Execute Phase:** Initiate the **Tier 2 Loop** for the **Active Plan** file.
-7.  **Handle Phase Success:** If the Tier 2 Loop completes successfully, modify the `documentation/architect_master_todo.md` file to change the `[ ]` on the **Active Target** line to `[x]`. Save the file. Then, **switch to the Orchestrator role** to re-evaluate the project state by executing the command `<mode>orchestrator-2</mode>`.
+7.  **Handle Phase Success:** If the Tier 2 Loop completes successfully, modify the `documentation/architect_master_todo.md` file to change the `[ ]` on the **Active Target** line to `[x]`. Save the file. Then, **switch to the Orchestrator role** to re-evaluate the project state by executing the command `<mode>orchestrator-senior</mode>`.
 8.  **Handle Phase Failure:** If the Tier 2 Loop signals failure at any point, **immediately switch to EMERGENCY MODE** (Rule 6).
 
 **Tier 2: Atomic Task Loop (The Worker)**
