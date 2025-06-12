@@ -11,7 +11,7 @@
   ```
 
 ## Task 2: Implement indexer.py
-- [ ] **LLM Prompt:** "Create indexer.py with codebase scanning and Qdrant upload functionality"
+- [x] **LLM Prompt:** "Create indexer.py with codebase scanning and Qdrant upload functionality"
 - **Verification:** File exists and can be run with `python indexer.py`
 - **Code Requirements:** Must include:
   - Qdrant client configuration
