@@ -32,5 +32,5 @@
 - **Verification:** architect-senior rules include vector query step
 
 ## Task 5: Add Vector-Updater Mode
-- [ ] **LLM Prompt:** "Add vector-updater mode to custom_modes.yaml"
+- [x] **LLM Prompt:** "Add vector-updater mode to custom_modes.yaml"
 - **Verification:** New mode exists with correct workflow
