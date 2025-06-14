@@ -61,6 +61,9 @@ If the failing task is from a `FIX_PLAN.md` file, this indicates a deep strategi
 4.  **Clean Up State:**
     *   **Command:** `test -f FIX_PLAN.md && rm FIX_PLAN.md`
     *   **Command:** `test -f NEEDS_ASSISTANCE.md && rm NEEDS_ASSISTANCE.md`
+    *   **Verification:**
+        - Run `test ! -f FIX_PLAN.md && echo "OK"`
+        - Run `test ! -f NEEDS_ASSISTANCE.md && echo "OK"`
 5.  **Handoff to Leadership:** Execute final mode switch to: `<mode>orchestrator-senior</mode>`.
 
 ## 7. CRITICAL DIRECTIVES

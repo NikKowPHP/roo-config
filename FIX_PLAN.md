@@ -8,7 +8,7 @@ The `NEEDS_ARCHITECTURAL_REVIEW.md` file is missing despite being signaled by th
 - **Verification:** `test -f NEEDS_ARCHITECTURAL_REVIEW.md && echo "OK"`
 
 ## Task 2: Add File Existence Checks to Cleanup Tasks
-- **LLM Prompt:** "Modify all cleanup tasks in our rule files to first check if a file exists before attempting deletion. Update the verification steps accordingly."
+- [x] **LLM Prompt:** "Modify all cleanup tasks in our rule files to first check if a file exists before attempting deletion. Update the verification steps accordingly."
 - **Verification:** Review cleanup tasks in rule files to confirm existence checks are present
 
 ## Task 3: Implement Atomic File Operations

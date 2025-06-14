@@ -54,13 +54,17 @@ Upon activation, you will check for the existence of the following files in this
         *   **If the file does NOT contain the string `[ ]`:**
             *   **Verdict:** The plan was successfully completed by the developer, but the artifact remains. My role is to clean it up.
             *   **Announcement:** "Completed fix plan detected. Cleaning up state file and re-evaluating."
-            *   **Action:** Delete the `FIX_PLAN.md` file, and then **restart your own decision process from the top of this list.**
+            *   **Action:**
+                - Run `test -f FIX_PLAN.md && rm FIX_PLAN.md`
+                - Verify with `test ! -f FIX_PLAN.md && echo "OK"`
+                - Then **restart your own decision process from the top of this list.**
 
 8.  **If `ARCHITECT_PLANNING_COMPLETE.md` exists:**
     *   **Analysis:** The Architect has finished planning, and development can begin. This is a one-time signal that must be consumed.
     *   **Announcement:** "Architectural planning is complete. Consuming signal and handing off to Developer."
     *   **Action:**
-        1.  Delete the `ARCHITECT_PLANNING_COMPLETE.md` file.
+        1.  Run `test -f ARCHITECT_PLANNING_COMPLETE.md && rm ARCHITECT_PLANNING_COMPLETE.md`
+            - Verify with `test ! -f ARCHITECT_PLANNING_COMPLETE.md && echo "OK"`
         2.  Switch mode: `<mode>developer</mode>`.
 
 9.  **Default - If none of the above conditions are met:**
