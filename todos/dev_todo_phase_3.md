@@ -197,6 +197,7 @@ This plan will refactor the standalone scripts into a proper, installable Python
 - **Code:**
   ```
   .
+- [x] **Task 7: Update Documentation**
   pytest
   black
   ```
