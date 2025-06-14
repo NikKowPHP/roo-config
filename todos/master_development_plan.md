@@ -16,6 +16,6 @@
    - **Todo File:** `todos/dev_todo_phase_3.md`
 +
 ## Phase 4: Integrate and Finalize Portable Tool
-+- [ ] **Task 4: Clean up repository and integrate the new VDB tool into agent workflows**
++- [x] **Task 4: Clean up repository and integrate the new VDB tool into agent workflows**
 +  - **Objective:** Update all agent rules to use the new `vdb-tool` commands and clean up leftover state files.
 +  - **Todo File:** `todos/dev_todo_phase_4.md`
