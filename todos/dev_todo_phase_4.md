@@ -11,7 +11,7 @@ This plan will clean the repository of old state files and update all agent rule
 - **Verification:** Run `grep "vdb-tool query" .roo/rules-architect-senior/rules.md && echo "OK"`
 
 ## Task 3: Update Vector Updater's Rules to Use New Tool
-- **LLM Prompt:** "In `.roo/custom_modes.yaml`, find the `vector-updater` custom mode. In its `roleDefinition`, replace the command `python vector_tool.py update [file_path]` with `vdb-tool update [file_path]`."
+- [x] **LLM Prompt:** "In `.roo/custom_modes.yaml`, find the `vector-updater` custom mode. In its `roleDefinition`, replace the command `python vector_tool.py update [file_path]` with `vdb-tool update [file_path]`."
 - **Verification:** Run `grep "vdb-tool update" .roo/custom_modes.yaml && echo "OK"`
 
 ## Task 4: Implement Orchestration for Memory Synchronization

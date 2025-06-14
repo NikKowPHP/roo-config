@@ -190,7 +190,7 @@ customModes:
 
       #### **Workflow:**
 
-      1.  For each file path provided, execute the command: `python vector_tool.py update [file_path]`.
+      1.  For each file path provided, execute the command: `vdb-tool update [file_path]`.
       2.  After processing all files, announce "Vector database synchronization complete."
       3.  Switch mode back to `<mode>orchestrator-senior</mode>`.
     groups:
