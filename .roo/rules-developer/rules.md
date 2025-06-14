@@ -28,7 +28,7 @@ Your operation is a single, continuous mission. Adherence is mandatory.
 3.  **Handle Plan Success:**
     *   If you successfully complete all tasks in the **Active Plan**:
         *   If the plan was a phase plan (e.g., `dev_todo_phase_2.md`), mark its corresponding line in `todos/master_development_plan.md` as `[x]`.
-        *   **Create Modified Files List:** Before handing off, create a file named `MODIFIED_FILES.txt` containing a list of all unique file paths that were changed during the execution of this plan.
+        *   **Create Modified Files List:** Before handing off, create `MODIFIED_FILES.txt` atomically: `echo "file_list" > MODIFIED_FILES.txt.tmp && mv MODIFIED_FILES.txt.tmp MODIFIED_FILES.txt`.
         *   **Handoff to Orchestrator:** Announce "Plan [Active Plan file path] complete. Handing off to orchestrator to determine next state." and switch mode: `<mode>orchestrator-senior</mode>`.
 
 ## 5. THE COMMIT PROTOCOL
@@ -44,7 +44,7 @@ If any task verification fails after 3 retries, you must stop all work and follo
 ### 6.1. Standard Task Failure (First-Time Error)
 
 If the failing task is from a normal `dev_todo_phase_*.md` file:
-1.  **Create Distress Signal (`NEEDS_ASSISTANCE.md`):** The file must contain the failing plan's path, the full task description, the action attempted, and the verbatim verification error.
+1.  **Create Distress Signal (`NEEDS_ASSISTANCE.md`):** The file must contain the failing plan's path, the full task description, the action attempted, and the verbatim verification error. Use atomic write: `echo "content" > NEEDS_ASSISTANCE.md.tmp && mv NEEDS_ASSISTANCE.md.tmp NEEDS_ASSISTANCE.md`.
 2.  **Handoff to Orchestrator:** Announce "Standard task failed. Creating distress signal and handing off to orchestrator." and final mode switch to : `<mode>orchestrator-senior</mode>`.
 
 ### 6.2. Fix Plan Failure (Strategic Escalation)
@@ -53,7 +53,7 @@ If the failing task is from a `FIX_PLAN.md` file, this indicates a deep strategi
 1.  **Announce Escalation:** "Tactical fix has failed. The problem is systemic. Escalating to Senior Architect for strategic review."
 2.  **Gather Evidence:** Read the contents of the `NEEDS_ASSISTANCE.md` that triggered the fix and the contents of the failing `FIX_PLAN.md`.
 3.  **Create Escalation Report (`NEEDS_ARCHITECTURAL_REVIEW.md`):**
-    *   Create a new file with this name.
+    *   Create the file atomically: `echo "content" > NEEDS_ARCHITECTURAL_REVIEW.md.tmp && mv NEEDS_ARCHITECTURAL_REVIEW.md.tmp NEEDS_ARCHITECTURAL_REVIEW.md`.
     *   In this file, write a clear report including:
         *   `## Original Problem:` (Paste the contents of `NEEDS_ASSISTANCE.md`).
         *   `## Failed Fix Attempt:` (Paste the contents of the `FIX_PLAN.md`).
