@@ -24,5 +24,5 @@ This plan will clean the repository of old state files and update all agent rule
   - **Verification:** Run `grep "MODIFIED_FILES.txt" .roo/rules-orchestrator-senior/rules.md && echo "OK"`
 
 ## Task 5: Mark Project as Complete
-- **LLM Prompt:** "All planned work is now complete. The tool is portable and fully integrated. Create the final signal file `DEVELOPMENT_COMPLETE.md` to signify the end of the project."
+- [x] **LLM Prompt:** "All planned work is now complete. The tool is portable and fully integrated. Create the final signal file `DEVELOPMENT_COMPLETE.md` to signify the end of the project."
 - **Verification:** Run `test -f DEVELOPMENT_COMPLETE.md && echo "OK"`
