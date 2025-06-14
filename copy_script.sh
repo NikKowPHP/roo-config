@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# Copy the file from the workspace to the destination
-cp .roo/custom_modes.yaml ~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/custom_modes.yaml
+# Activate virtual environment and copy the file from the workspace to the destination
+source venv/bin/activate && cp .roo/custom_modes.yaml ~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/custom_modes.yaml
