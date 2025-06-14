@@ -12,6 +12,6 @@
   - **Todo File:** `todos/dev_todo_phase_2.md`
 + 
 + ## Phase 3: Make Vector DB Tool Portable
-+ - [ ] **Task 3: Refactor scripts into an installable package**
++ - [x] **Task 3: Refactor scripts into an installable package**
 +   - **Objective:** Refactor the existing vector database scripts into a proper, installable Python package to make them reusable across different projects.
 +   - **Todo File:** `todos/dev_todo_phase_3.md`
