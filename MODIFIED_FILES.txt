@@ -1,4 +1,0 @@
-.roo/rules-developer/rules.md
-.roo/rules-orchestrator-senior/rules.md
-FIX_PLAN.md
-NEEDS_ARCHITECTURAL_REVIEW.md
