@@ -12,6 +12,7 @@ This plan will refactor the standalone scripts into a proper, installable Python
   - Run `test -f src/vdb/tool.py && echo "OK"`
   - Run `test -f src/vdb/__init__.py && echo "OK"`
 
+- [x] **Task 2: Create Shared Configuration Module**
 ## Task 2: Create Shared Configuration Module
 - **LLM Prompt:** "Create a new file at `src/vdb/config.py` with the following content. This module will handle loading configuration from a local `vdb-config.ini` file and will centralize the Qdrant and SentenceTransformer clients."
 - **Code:**
