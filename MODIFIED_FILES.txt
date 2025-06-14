@@ -1,5 +1,0 @@
-DEVELOPMENT_COMPLETE.md
-todos/dev_todo_phase_5.md
-.roo/rules-orchestrator-senior/rules.md
-.roo/rules-planner-architect/rules.md
-.roo/rules-planner-orchestrator/rules.md
