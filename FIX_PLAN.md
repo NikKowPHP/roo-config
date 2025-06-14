@@ -7,7 +7,7 @@ The Orchestrator AI is unable to switch to the `vector-updater` mode, even thoug
 - **LLM Prompt:** "Modify the `copy_script.sh` script to activate the virtual environment before copying the `custom_modes.yaml` file. The script should now contain `#!/bin/bash\n\nsource venv/bin/activate && cp .roo/custom_modes.yaml ~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/custom_modes.yaml`"
 - **Verification:** Read the contents of `copy_script.sh` and confirm that it contains the correct activation command.
 
-## Task 2: Make src/vdb/tool.py executable
+## Task 2: Make src/vdb/tool.py executable [x]
 - **LLM Prompt:** "Make the `src/vdb/tool.py` script executable using the command `chmod +x src/vdb/tool.py`"
 - **Verification:** Check the output of the command to confirm it executed successfully.
 
