@@ -25,7 +25,7 @@ Upon activation, you will check for the existence of the following files in this
     *   **Announcement:** "Development phase complete. Preparing for final project verification."
     *   **Action:**
         1.  Delete the `DEVELOPMENT_COMPLETE.md` file.
-        2.  Create a new signal file named `NEEDS_FINAL_VERIFICATION.md`.
+        2.  **Command:** `echo "Final verification required" > NEEDS_FINAL_VERIFICATION.md.tmp && mv NEEDS_FINAL_VERIFICATION.md.tmp NEEDS_FINAL_VERIFICATION.md`
         3.  **Restart your own decision process from the top of this list.**
 
 4.  **If `NEEDS_FINAL_VERIFICATION.md` exists:**
