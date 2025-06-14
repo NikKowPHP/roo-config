@@ -15,6 +15,12 @@ A portable CLI tool for AI agents to index and query codebases, providing semant
 - Sentence Transformers for embeddings
 - ConfigParser for settings management
 
+## Agent Integration
+This tool is designed to seamlessly integrate with AI agent workflows through:
+- Standardized CLI interface for programmatic control
+- JSON output format for easy parsing
+- Configurable indexing strategies for different codebase types
+- Automatic update detection for maintaining current context
 ## Usage Scenarios
 - AI agent codebase context management
 - Developer tool for code search

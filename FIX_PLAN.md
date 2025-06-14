@@ -12,8 +12,8 @@
   - Run `grep -c "User Interface" documentation/master_plan.md | test $? -eq 1 && echo "OK"`
 
 ## Task 3: Enhance App Description
-- **LLM Prompt:** "Add a new 'Agent Integration' section to `app_description.md` describing how the tool integrates with AI agent workflows."
-- **Verification:** 
+- [x] **LLM Prompt:** "Add a new 'Agent Integration' section to `app_description.md` describing how the tool integrates with AI agent workflows."
+- **Verification:**
   - Run `grep "Agent Integration" app_description.md && echo "OK"`
 
 ## Task 4: Clean up and reset for autonomous handoff
