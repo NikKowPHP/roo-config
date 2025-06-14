@@ -2,7 +2,7 @@ import argparse
 import json
 import uuid
 from qdrant_client.http.models import Filter, FieldCondition, MatchValue, PointStruct
-from .config import client, model, COLLECTION_NAME, chunk_code
+from src.vdb.config import client, model, COLLECTION_NAME, chunk_code
 
 def update_file(file_path):
     print(f"Updating: {file_path}")
