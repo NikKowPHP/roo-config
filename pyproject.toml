@@ -1,3 +1,18 @@
-[tool.black]
-line-length = 88
-target-version = ['py312']
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vdb-agent-tool"
+version = "1.0.0"
+description = "A portable vector database tool for AI agents to manage codebase context."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "qdrant-client",
+    "sentence-transformers",
+]
+
+[project.scripts]
+vdb-index = "vdb.indexer:main"
+vdb-tool = "vdb.tool:main"
