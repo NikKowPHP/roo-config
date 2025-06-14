@@ -187,6 +187,7 @@ This plan will refactor the standalone scripts into a proper, installable Python
 
   [project.scripts]
   vdb-index = "vdb.indexer:main"
+- [x] **Task 6: Update `requirements.txt` for CI/CD**
   vdb-tool = "vdb.tool:main"
   ```
 - **Verification:** Run `grep "\[project.scripts\]" pyproject.toml && echo "OK"`
