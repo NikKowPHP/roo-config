@@ -5,5 +5,3 @@
 - [x] Technical Design Specification
 - [x] Database Schema (covered in Technical Design Specification)
 - [x] API Documentation (covered in Technical Design Specification)
-- [ ] User Interface Specifications
-- [ ] Deployment Architecture

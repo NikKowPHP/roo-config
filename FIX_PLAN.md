@@ -7,8 +7,8 @@
   - Run `grep "todos/" documentation/file_manifest.md && echo "OK"`
 
 ## Task 2: Correct Master Plan
-- **LLM Prompt:** "Update `documentation/master_plan.md` by removing the 'User Interface Specifications' and 'Deployment Architecture' items since they're not relevant to this CLI tool project."
-- **Verification:** 
+- [x] **LLM Prompt:** "Update `documentation/master_plan.md` by removing the 'User Interface Specifications' and 'Deployment Architecture' items since they're not relevant to this CLI tool project."
+- **Verification:**
   - Run `grep -c "User Interface" documentation/master_plan.md | test $? -eq 1 && echo "OK"`
 
 ## Task 3: Enhance App Description
