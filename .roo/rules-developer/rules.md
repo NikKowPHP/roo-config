@@ -28,6 +28,7 @@ Your operation is a single, continuous mission. Adherence is mandatory.
 3.  **Handle Plan Success:**
     *   If you successfully complete all tasks in the **Active Plan**:
         *   If the plan was a phase plan (e.g., `dev_todo_phase_2.md`), mark its corresponding line in `todos/master_development_plan.md` as `[x]`.
+        *   **Create Modified Files List:** Before handing off, create a file named `MODIFIED_FILES.txt` containing a list of all unique file paths that were changed during the execution of this plan.
         *   **Handoff to Orchestrator:** Announce "Plan [Active Plan file path] complete. Handing off to orchestrator to determine next state." and switch mode: `<mode>orchestrator-senior</mode>`.
 
 ## 5. THE COMMIT PROTOCOL

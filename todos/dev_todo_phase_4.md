@@ -17,7 +17,7 @@ This plan will clean the repository of old state files and update all agent rule
 ## Task 4: Implement Orchestration for Memory Synchronization
 - **LLM Prompt:** "Modify the Developer and Orchestrator rules to enable memory synchronization. First, in `.roo/rules-developer/rules.md`, under the 'Handle Plan Success' section, add a step to create a signal file listing modified files. Second, in `.roo/rules-orchestrator-senior/rules.md`, add a new high-priority rule to consume this signal and trigger the `vector-updater`."
 - **Sub-Task 4.1: Update Developer Rules**
-  - **LLM Prompt:** "In `.roo/rules-developer/rules.md` under section `3. Handle Plan Success`, add the following action before the handoff: 'Before handing off, create a file named `MODIFIED_FILES.txt` containing a list of all unique file paths that were changed during the execution of this plan.'"
+  - [x] **LLM Prompt:** "In `.roo/rules-developer/rules.md` under section `3. Handle Plan Success`, add the following action before the handoff: 'Before handing off, create a file named `MODIFIED_FILES.txt` containing a list of all unique file paths that were changed during the execution of this plan.'"
   - **Verification:** Run `grep "MODIFIED_FILES.txt" .roo/rules-developer/rules.md && echo "OK"`
 - **Sub-Task 4.2: Update Orchestrator Rules**
   - **LLM Prompt:** "In `.roo/rules-orchestrator-senior/rules.md`, add a new rule at priority #4 (shifting the existing #4 and subsequent rules down). This new rule must check for `MODIFIED_FILES.txt`, switch to `vector-updater` mode with the file's contents, and then delete the file."
