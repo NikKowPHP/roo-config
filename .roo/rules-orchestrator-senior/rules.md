@@ -26,17 +26,24 @@ Upon activation, you will check for the existence of the following files in this
     *   **Announcement:** "Handing off to Senior Architect for final codebase and documentation verification."
     *   **Action:** Switch mode: `<mode>architect-senior</mode>`.
 
-4.  **If `NEEDS_ARCHITECTURAL_REVIEW.md` exists:**
+4.  **If `MODIFIED_FILES.txt` exists:**
+    *   **Analysis:** The Developer has signaled completion of work with modified files that need vector database updates.
+    *   **Announcement:** "Modified files list detected. Switching to Vector Updater mode."
+    *   **Action:**
+        1. Switch to `vector-updater` mode with the contents of `MODIFIED_FILES.txt`.
+        2. Delete the `MODIFIED_FILES.txt` file.
+
+5.  **If `NEEDS_ARCHITECTURAL_REVIEW.md` exists:**
     *   **Analysis:** A tactical fix has failed. The core plan requires re-evaluation by the master strategist.
     *   **Announcement:** "Escalation signal detected. A tactical fix has failed. Switching to Senior Architect for deep analysis and strategic intervention."
     *   **Action:** Switch mode: `<mode>architect-senior</mode>`.
 
-5.  **If `NEEDS_ASSISTANCE.md` exists:**
+6.  **If `NEEDS_ASSISTANCE.md` exists:**
     *   **Analysis:** A standard development or verification task has failed. A first-level response is required.
     *   **Announcement:** "Distress signal detected. Switching to Emergency mode for tactical diagnosis."
     *   **Action:** Switch mode: `<mode>emergency</mode>`.
 
-6.  **If `FIX_PLAN.md` exists:**
+7.  **If `FIX_PLAN.md` exists:**
     *   **Analysis:** A fix plan exists. I must determine if it is complete or pending execution.
     *   **Action (Conditional Logic):**
         *   **Read the `FIX_PLAN.md` file.**
@@ -49,14 +56,14 @@ Upon activation, you will check for the existence of the following files in this
             *   **Announcement:** "Completed fix plan detected. Cleaning up state file and re-evaluating."
             *   **Action:** Delete the `FIX_PLAN.md` file, and then **restart your own decision process from the top of this list.**
 
-7.  **If `ARCHITECT_PLANNING_COMPLETE.md` exists:**
+8.  **If `ARCHITECT_PLANNING_COMPLETE.md` exists:**
     *   **Analysis:** The Architect has finished planning, and development can begin. This is a one-time signal that must be consumed.
     *   **Announcement:** "Architectural planning is complete. Consuming signal and handing off to Developer."
     *   **Action:**
         1.  Delete the `ARCHITECT_PLANNING_COMPLETE.md` file.
         2.  Switch mode: `<mode>developer</mode>`.
 
-8.  **Default - If none of the above conditions are met:**
+9.  **Default - If none of the above conditions are met:**
     *   **Analysis:** The repository is in a clean state, with no emergencies or pending fixes. The system should proceed with the next phase of planning.
     *   **Announcement:** "No critical signals found. Switching to Architect mode for standard planning."
     *   **Action:** Switch mode: `<mode>architect-senior</mode>`.
