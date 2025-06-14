@@ -13,7 +13,14 @@ Upon activation, you will check for the existence of the following files in this
     *   **Announcement:** "SUCCESS: Project is verified and complete. Halting all operations."
     *   **Action:** Terminate all processes.
 
-2.  **If `DEVELOPMENT_COMPLETE.md` exists:**
+2.  **If `MODIFIED_FILES.txt` exists:**
+    *   **Analysis:** The Developer has signaled completion of work with modified files that need vector database updates.
+    *   **Announcement:** "Modified files list detected. Switching to Vector Updater mode."
+    *   **Action:**
+        1. Switch to `vector-updater` mode with the contents of `MODIFIED_FILES.txt`.
+        2. Delete the `MODIFIED_FILES.txt` file.
+
+3.  **If `DEVELOPMENT_COMPLETE.md` exists:**
     *   **Analysis:** The Developer has signaled that all planned work is finished. The project requires final verification.
     *   **Announcement:** "Development phase complete. Preparing for final project verification."
     *   **Action:**
@@ -21,17 +28,10 @@ Upon activation, you will check for the existence of the following files in this
         2.  Create a new signal file named `NEEDS_FINAL_VERIFICATION.md`.
         3.  **Restart your own decision process from the top of this list.**
 
-3.  **If `NEEDS_FINAL_VERIFICATION.md` exists:**
+4.  **If `NEEDS_FINAL_VERIFICATION.md` exists:**
     *   **Analysis:** The project is ready for a final, holistic review.
     *   **Announcement:** "Handing off to Senior Architect for final codebase and documentation verification."
     *   **Action:** Switch mode: `<mode>architect-senior</mode>`.
-
-4.  **If `MODIFIED_FILES.txt` exists:**
-    *   **Analysis:** The Developer has signaled completion of work with modified files that need vector database updates.
-    *   **Announcement:** "Modified files list detected. Switching to Vector Updater mode."
-    *   **Action:**
-        1. Switch to `vector-updater` mode with the contents of `MODIFIED_FILES.txt`.
-        2. Delete the `MODIFIED_FILES.txt` file.
 
 5.  **If `NEEDS_ARCHITECTURAL_REVIEW.md` exists:**
     *   **Analysis:** A tactical fix has failed. The core plan requires re-evaluation by the master strategist.

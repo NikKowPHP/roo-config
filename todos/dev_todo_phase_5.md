@@ -11,7 +11,7 @@ This plan will perform the final, critical fixes to ensure the agent system is r
   - Run `test ! -f todos/dev_todo_phase_2.md && echo "OK"`
 
 ## Task 2: Correct Orchestrator Priority Logic
-- **LLM Prompt:** "Modify `.roo/rules-orchestrator-senior/rules.md`. The rule for `MODIFIED_FILES.txt` must have a higher priority than the rule for `DEVELOPMENT_COMPLETE.md`. Re-order the decision tree so that the `MODIFIED_FILES.txt` check happens *before* the `DEVELOPMENT_COMPLETE.md` check."
+- [x] **LLM Prompt:** "Modify `.roo/rules-orchestrator-senior/rules.md`. The rule for `MODIFIED_FILES.txt` must have a higher priority than the rule for `DEVELOPMENT_COMPLETE.md`. Re-order the decision tree so that the `MODIFIED_FILES.txt` check happens *before* the `DEVELOPMENT_COMPLETE.md` check."
 - **Verification:** Open `.roo/rules-orchestrator-senior/rules.md` and confirm that the `MODIFIED_FILES.txt` condition is evaluated before the `DEVELOPMENT_COMPLETE.md` condition.
 
 ## Task 3: Update Planner-Architect Rules for Consistency
