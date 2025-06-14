@@ -36,6 +36,7 @@ Your operation is a single, continuous mission. Adherence is mandatory.
 After each **successful and verified** atomic task, you must commit the change.
 *   **Command:** `git add .`
 *   **Command:** `git commit -m "feat: Complete task '[task title from plan]'"`.
+*   **Command:** `venv/bin/python src/vdb/tool.py update todos/dev_todo_phase_5.md`
 
 ## 6. FAILURE & ESCALATION PROTOCOL
 
