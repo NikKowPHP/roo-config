@@ -15,7 +15,7 @@ This plan will perform the final, critical fixes to ensure the agent system is r
 - **Verification:** Open `.roo/rules-orchestrator-senior/rules.md` and confirm that the `MODIFIED_FILES.txt` condition is evaluated before the `DEVELOPMENT_COMPLETE.md` condition.
 
 ## Task 3: Update Planner-Architect Rules for Consistency
-- **LLM Prompt:** "The rules in `.roo/rules-planner-architect/rules.md` are outdated. Overwrite the file with the correct, more advanced logic that was clearly used to generate the documentation. This logic includes manifest creation and self-verification."
+- [x] **LLM Prompt:** "The rules in `.roo/rules-planner-architect/rules.md` are outdated. Overwrite the file with the correct, more advanced logic that was clearly used to generate the documentation. This logic includes manifest creation and self-verification."
 - **Verification:** Run `grep "Blueprint Self-Verification" .roo/rules-planner-architect/rules.md && echo "OK"`
 
 ## Task 4: Delete Obsolete Planner-Orchestrator
