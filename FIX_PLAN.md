@@ -17,5 +17,5 @@
   - Run `grep "Agent Integration" app_description.md && echo "OK"`
 
 ## Task 4: Clean up and reset for autonomous handoff
-- **LLM Prompt:** "Delete the file `NEEDS_FINAL_VERIFICATION.md` from the root directory."
+- [x] **LLM Prompt:** "Delete the file `NEEDS_FINAL_VERIFICATION.md` from the root directory."
 - **Verification:** The file `NEEDS_FINAL_VERIFICATION.md` no longer exists.
