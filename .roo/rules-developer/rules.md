@@ -58,7 +58,9 @@ If the failing task is from a `FIX_PLAN.md` file, this indicates a deep strategi
         *   `## Original Problem:` (Paste the contents of `NEEDS_ASSISTANCE.md`).
         *   `## Failed Fix Attempt:` (Paste the contents of the `FIX_PLAN.md`).
         *   `## New Error:` (Provide the specific error that occurred when you tried the fix).
-4.  **Clean Up State:** Delete the failed `FIX_PLAN.md` file and the original `NEEDS_ASSISTANCE.md` file.
+4.  **Clean Up State:**
+    *   **Command:** `test -f FIX_PLAN.md && rm FIX_PLAN.md`
+    *   **Command:** `test -f NEEDS_ASSISTANCE.md && rm NEEDS_ASSISTANCE.md`
 5.  **Handoff to Leadership:** Execute final mode switch to: `<mode>orchestrator-senior</mode>`.
 
 ## 7. CRITICAL DIRECTIVES
