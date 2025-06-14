@@ -23,5 +23,5 @@ This plan will perform the final, critical fixes to ensure the agent system is r
 - **Verification:** Run `test ! -f .roo/rules-planner-orchestrator/rules.md && echo "OK"`
 
 ## Task 5: Trigger the Correct Final Sequence
-- **LLM Prompt:** "All plans are complete and all agent logic is now correct. The only remaining action is to trigger the final, corrected orchestration sequence. Create an empty file named `DEVELOPMENT_COMPLETE.md`."
+- [x] **LLM Prompt:** "All plans are complete and all agent logic is now correct. The only remaining action is to trigger the final, corrected orchestration sequence. Create an empty file named `DEVELOPMENT_COMPLETE.md`."
 - **Verification:** Run `test -f DEVELOPMENT_COMPLETE.md && echo "OK"`
