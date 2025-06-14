@@ -14,8 +14,12 @@
  - [x] **Task 3: Refactor scripts into an installable package**
    - **Objective:** Refactor the existing vector database scripts into a proper, installable Python package to make them reusable across different projects.
    - **Todo File:** `todos/dev_todo_phase_3.md`
-+
 ## Phase 4: Integrate and Finalize Portable Tool
-+- [x] **Task 4: Clean up repository and integrate the new VDB tool into agent workflows**
-+  - **Objective:** Update all agent rules to use the new `vdb-tool` commands and clean up leftover state files.
-+  - **Todo File:** `todos/dev_todo_phase_4.md`
+- [x] **Task 4: Clean up repository and integrate the new VDB tool into agent workflows**
+  - **Objective:** Update all agent rules to use the new `vdb-tool` commands and clean up leftover state files.
+  - **Todo File:** `todos/dev_todo_phase_4.md`
++
++## Phase 5: System Correction and Finalization
++- [ ] **Task 5: Correct agent logic, clean state, and perform final verification**
++  - **Objective:** Fix the orchestration priority, update planner rules to reflect their actual capabilities, clean all obsolete files, and re-run the final verification sequence correctly.
++  - **Todo File:** `todos/dev_todo_phase_5.md`

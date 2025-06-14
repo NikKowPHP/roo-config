@@ -1,6 +1,0 @@
-FIX_PLAN.md
-.roo/rules-architect-senior/rules.md
-.roo/rules-developer/rules.md
-.roo/rules-orchestrator-senior/rules.md
-todos/dev_todo_phase_4.md
-DEVELOPMENT_COMPLETE.md

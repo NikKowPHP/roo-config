@@ -1,0 +1,4 @@
+# Project File Manifest
+documentation/business_requirements.md
+documentation/functional_requirements.md
+documentation/technical_design_specification.md
