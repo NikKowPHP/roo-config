@@ -104,6 +104,7 @@ This plan will refactor the standalone scripts into a proper, installable Python
   if __name__ == "__main__":
       main()
   ```
+- [x] **Task 4: Refactor the Tool Script**
 - **Verification:** Run `grep "from .config import" src/vdb/indexer.py && echo "OK"`
 
 ## Task 4: Refactor the Tool Script
