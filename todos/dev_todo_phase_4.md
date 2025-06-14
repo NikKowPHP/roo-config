@@ -7,7 +7,7 @@ This plan will clean the repository of old state files and update all agent rule
 - **Verification:** Run `test ! -f FIX_PLAN.md && echo "OK"`
 
 ## Task 2: Update Architect's Rules to Use New Tool
-- **LLM Prompt:** "In the file `.roo/rules-architect-senior/rules.md`, find the 'Semantic Discovery' step. Replace the command `python vector_tool.py query "Your natural language question about the code"` with the new command `vdb-tool query "Your natural language question about the code"`."
+- [x] **LLM Prompt:** "In the file `.roo/rules-architect-senior/rules.md`, find the 'Semantic Discovery' step. Replace the command `python vector_tool.py query "Your natural language question about the code"` with the new command `vdb-tool query "Your natural language question about the code"`."
 - **Verification:** Run `grep "vdb-tool query" .roo/rules-architect-senior/rules.md && echo "OK"`
 
 ## Task 3: Update Vector Updater's Rules to Use New Tool
