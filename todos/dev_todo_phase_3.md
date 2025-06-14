@@ -55,6 +55,7 @@ This plan will refactor the standalone scripts into a proper, installable Python
       return chunks
   ```
 - **Verification:** Run `test -f src/vdb/config.py && echo "OK"`
+- [x] **Task 3: Refactor the Indexer Script**
 
 ## Task 3: Refactor the Indexer Script
 - **LLM Prompt:** "Overwrite the contents of `src/vdb/indexer.py` with the following refactored code, which imports its configuration and logic from the new `config` module."
