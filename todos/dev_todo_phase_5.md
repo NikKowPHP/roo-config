@@ -19,7 +19,7 @@ This plan will perform the final, critical fixes to ensure the agent system is r
 - **Verification:** Run `grep "Blueprint Self-Verification" .roo/rules-planner-architect/rules.md && echo "OK"`
 
 ## Task 4: Delete Obsolete Planner-Orchestrator
-- **LLM Prompt:** "The `planner-orchestrator` role is now fully superseded by the more robust `orchestrator-senior` and the new `planner-architect` workflow. Delete the file `.roo/rules-planner-orchestrator/rules.md` to remove the obsolete agent."
+- [x] **LLM Prompt:** "The `planner-orchestrator` role is now fully superseded by the more robust `orchestrator-senior` and the new `planner-architect` workflow. Delete the file `.roo/rules-planner-orchestrator/rules.md` to remove the obsolete agent."
 - **Verification:** Run `test ! -f .roo/rules-planner-orchestrator/rules.md && echo "OK"`
 
 ## Task 5: Trigger the Correct Final Sequence
