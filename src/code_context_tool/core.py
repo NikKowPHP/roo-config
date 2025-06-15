@@ -232,14 +232,15 @@ class VectorDB:
             with_payload=True
         )
         
+        # Format the results for the AI/user
         results_for_ai = [
             {
                 "score": hit.score,
                 "file_path": hit.payload["file_path"],
                 "start_line": hit.payload["start_line"],
                 "end_line": hit.payload["end_line"],
-                "code_chunk": hit.payload["code_chunk"]
+                "code_chunk": hit.payload["text"]  # <-- THE FIX IS HERE
             }
-for hit in search_result
+            for hit in search_result
         ]
         return results_for_ai
