@@ -130,17 +130,37 @@ class VectorDB:
         self._ensure_collection_exists()
 
     def _ensure_collection_exists(self):
+        """
+        Checks if the collection exists AND has the correct vector dimensions.
+        If not, it recreates it.
+        """
         try:
-            self.client.get_collection(collection_name=self.collection_name)
+            collection_info = self.client.get_collection(collection_name=self.collection_name)
+            model_dim = self.model.get_sentence_embedding_dimension()
+            collection_dim = collection_info.vectors_config.params.size
+
+            if model_dim == collection_dim:
+                # The collection exists and is correct, we are done.
+                return
+            
+            # If dimensions mismatch, we must recreate.
+            console.log(f"[yellow]Warning:[/yellow] Collection '[cyan]{self.collection_name}[/cyan]' exists but has wrong vector dimension (Expected: {model_dim}, Found: {collection_dim}).")
+            console.log("Recreating collection to match the new model...")
+            
         except Exception:
+            # This triggers if the collection doesn't exist at all.
             console.log(f"Collection '[cyan]{self.collection_name}[/cyan]' not found. Creating it now.")
-            self.client.recreate_collection(
-                collection_name=self.collection_name,
-                vectors_config=VectorParams(
-                    size=self.model.get_sentence_embedding_dimension(),
-                    distance=Distance.COSINE
-                ),
-            )
+
+        # This code will now run if the collection doesn't exist OR if dimensions mismatch.
+        self.client.recreate_collection(
+            collection_name=self.collection_name,
+            vectors_config=VectorParams(
+                size=self.model.get_sentence_embedding_dimension(),
+                distance=Distance.COSINE
+            ),
+        )
+        console.log("✅ Collection is ready.")
+
 
     def index_project(self, root_dir='.'):
         """Performs a full scan and indexing of the project directory."""
