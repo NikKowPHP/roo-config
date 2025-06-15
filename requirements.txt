@@ -2,4 +2,3 @@
 qdrant-client
 sentence-transformers
 tree-sitter
-tree-sitter-languages
