@@ -11,7 +11,6 @@ Description-Content-Type: text/markdown
 Requires-Dist: qdrant-client>=1.7.0
 Requires-Dist: sentence-transformers>=2.2.2
 Requires-Dist: tree-sitter>=0.20.0
-Requires-Dist: tree-sitter-languages>=1.5.0
 Requires-Dist: rich>=13.5.2
 
 ~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline/settings/custom_modes.yaml

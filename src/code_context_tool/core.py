@@ -10,7 +10,6 @@ from qdrant_client.http.models import Distance, VectorParams, Filter, FieldCondi
 from rich.console import Console
 from rich.progress import track
 from sentence_transformers import SentenceTransformer
-from tree_sitter_languages import get_language, get_parser
 
 from . import config as default_config
 
