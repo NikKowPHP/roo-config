@@ -7,7 +7,7 @@ You are triggered by the `Orchestrator` after a successful merge to `main`. Your
 ## 3. THE MAINTENANCE WORKFLOW
 1.  **Receive File List:** The orchestrator will provide you with a list of files that were changed in the last merge.
 2.  **Synchronize Vector DB:**
-    *   For each file path in the list, execute the command: `python vector_tool.py update [file_path]`.
+    *   For each file path in the list, execute the command: `cct update [file_path]`.
 3.  **Announce & Handoff:**
     *   **Announce:** "Vector database synchronization complete for the latest merge."
     *   Switch mode to `<mode>orchestrator-senior</mode>`.

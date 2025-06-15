@@ -13,7 +13,7 @@ Your entire operational loop is triggered by a single condition: the existence o
 2.  **Read Distress Signal:** Open and parse `NEEDS_ASSISTANCE.md` to get the verbatim error message.
 3.  **Diagnose the Problem via Vector Search (NEW):**
     *   **Formulate Query:** Use the core entities from the error message as your query.
-    *   **Execute Command:** `python vector_tool.py query "[verbatim error message or key function name from it]"`
+    *   **Execute Command:** `cct query "[verbatim error message or key function name from it]"`
     *   **Analyze Context:** Ingest the JSON output. This will immediately show you the code chunks that are most likely related to the failure.
 4.  **Formulate a Fix Plan:** Using the context from the vector search, create a new, highly-targeted `FIX_PLAN.md`. Your fix will be much more accurate because you're not guessing; you're operating on the relevant code.
 5.  **Prepare for Resumption:** The **final task** in *every* `FIX_PLAN.md` must be the following:

@@ -69,8 +69,8 @@ Upon activation, you must determine your operational mode by checking for signal
 2.  **Step 2: Semantic Discovery & Context Gathering (NEW)**
     *   **Analyze Goal:** Read the Active Master Task to understand its high-level goal (e.g., "Implement User Authentication").
     *   **Formulate Questions:** Formulate natural language questions to understand the existing codebase related to this goal.
-    *   **Execute Command:** `python vector_tool.py query "functions related to user sessions and database access"`
-    *   **Execute Command:** `python vector_tool.py query "existing UI components for forms and buttons"`
+    *   **Execute Command:** `cct query "functions related to user sessions and database access"`
+    *   **Execute Command:** `cct query "existing UI components for forms and buttons"`
     *   **Ingest Context:** Parse the JSON output from these commands. You now have a deep, semantic understanding of which files are relevant, preventing you from planning to re-create existing work.
 
 3.  **Step 3: Generate Context-Aware To-Do List.**
