@@ -44,7 +44,12 @@ After the script completes successfully, you must tell VS Code to use the new vi
 
 Before running the agents, make sure the AI's memory (Qdrant) is running via Docker. This command will download the image if you don't have it and run it in the background.
 ```bash
-docker run -d --rm -p 6333:6333 -p 6334:6334 --name roo-factory-db qdrant/qdrant
+
+docker run -d -p 6333:6333 -p 6334:6334 \
+    -v qdrant_storage:/qdrant/storage \
+    --name roo-factory-db \
+    qdrant/qdrant
+    
 ```
 
 **4. Link Agent Rules & Index the Code**

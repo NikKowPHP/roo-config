@@ -124,6 +124,8 @@ def chunk_file(file_path: Path, file_content: str):
 class VectorDB:
     def __init__(self):
         self.config = load_project_config()
+        console.log(f"Attempting to connect to Qdrant at URL: '[bold yellow]{self.config['qdrant_url']}[/bold yellow]'")
+
         self.client = qdrant_client.QdrantClient(url=self.config['qdrant_url'])
         self.model = get_embedding_model(self.config['model_name'])
         self.collection_name = self.config['collection_name']
@@ -239,8 +241,9 @@ class VectorDB:
                 "file_path": hit.payload["file_path"],
                 "start_line": hit.payload["start_line"],
                 "end_line": hit.payload["end_line"],
-                "code_chunk": hit.payload["text"]  # <-- THE FIX IS HERE
+                "code_chunk": hit.payload["code_chunk"] 
             }
             for hit in search_result
         ]
         return results_for_ai
+
