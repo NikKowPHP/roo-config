@@ -9,7 +9,7 @@
 - **Verification:** The command executes without errors.
 
 ## Task 3: Verify Tool Installation
-- [ ] **LLM Prompt:** "Run `cct --help` to verify the tool is installed correctly."
+- [x] **LLM Prompt:** "Run `cct --help` to verify the tool is installed correctly."
 - **Verification:** The command outputs help information for `cct`.
 
 ## Task 4: Clean Up and Reset
