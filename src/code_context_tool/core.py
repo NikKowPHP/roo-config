@@ -91,20 +91,41 @@ class VectorDB:
         self._ensure_collection_exists()
 
     def _ensure_collection_exists(self):
+        """
+        Checks if the collection exists AND has the correct vector dimensions.
+        This is the final, correct version based on direct object inspection.
+        """
         try:
+            # 1. Try to get collection info
             collection_info = self.client.get_collection(collection_name=self.collection_name)
+            
+            # 2. If it exists, check dimensions using the now-known correct path
             model_dim = self.model.get_sentence_embedding_dimension()
-            collection_dim = collection_info.vectors_config.params.size
-            if model_dim != collection_dim:
-                console.log(f"[yellow]Warning:[/yellow] Collection dimension mismatch. Recreating.")
-                raise ValueError("Dimension mismatch")
+            collection_dim = collection_info.config.params.vectors.size
+
+            if model_dim == collection_dim:
+                # 3. Match -> The collection is valid. Do nothing and continue.
+                console.log("✅ Collection exists and is ready.")
+                return
+            else:
+                # 4. Mismatch -> This should now never happen, but as a safeguard, recreate.
+                console.log(f"[yellow]Warning:[/yellow] Collection dimensions mismatch. Recreating.")
+                self.client.delete_collection(collection_name=self.collection_name)
+                raise Exception("Recreating collection due to dimension mismatch.")
+                
         except Exception:
-            console.log(f"Collection '[cyan]{self.collection_name}[/cyan]' not found or invalid. Creating it now.")
+            # 5. Any exception means we need to create the collection.
+            console.log(f"Collection '{self.collection_name}' not found or needs recreation. Creating now.")
+            model_dim = self.model.get_sentence_embedding_dimension()
             self.client.recreate_collection(
-                collection_name=self.collection_name,
-                vectors_config=VectorParams(size=self.model.get_sentence_embedding_dimension(), distance=Distance.COSINE),
+               collection_name=self.collection_name,
+               vectors_config=VectorParams(size=model_dim, distance=Distance.COSINE),
             )
-            console.log("✅ Collection is ready.")
+            console.log("✅ Collection is ready for indexing.")
+
+
+
+
 
     def index_project(self, root_dir='.'):
         console.log(f"Starting full project indexing for collection '[cyan]{self.collection_name}[/cyan]'...")
