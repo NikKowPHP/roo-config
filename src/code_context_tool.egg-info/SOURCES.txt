@@ -11,4 +11,3 @@ src/code_context_tool.egg-info/entry_points.txt
 src/code_context_tool.egg-info/requires.txt
 src/code_context_tool.egg-info/top_level.txt
 tests/test_installation.py
-tests/test_requirements.py
