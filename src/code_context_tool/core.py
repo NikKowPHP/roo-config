@@ -72,7 +72,7 @@ def chunk_by_syntax(file_path: Path, file_content: str):
             end_line = node.end_point[0] + 1
             chunk_text = node.text.decode('utf8', errors='ignore')
             chunks.append({
-                "text": chunk_text,
+                "code_chunk": chunk_text,
                 "file_path": str(file_path),
                 "start_line": start_line,
                 "end_line": end_line
@@ -100,7 +100,7 @@ def chunk_by_lines(file_path: Path, file_content: str, lines_per_chunk=20, overl
         chunk_text = "\n".join(lines[current_line:end_line_num])
         if chunk_text.strip(): # Avoid empty chunks
             chunks.append({
-                "text": chunk_text,
+                "code_chunk": chunk_text,
                 "file_path": str(file_path),
                 "start_line": current_line + 1,
                 "end_line": end_line_num
@@ -200,7 +200,7 @@ class VectorDB:
                 return
 
             # Batch encode for efficiency
-            vectors = self.model.encode([chunk["text"] for chunk in chunks])
+            vectors = self.model.encode([chunk["code_chunk"] for chunk in chunks])
 
             points_to_upsert = [
                 PointStruct(
