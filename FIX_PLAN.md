@@ -1,11 +1,11 @@
 # FIX_PLAN: Resolve Package Installation Failure
 
 ## Task 1: Update Requirements File
-- [ ] **LLM Prompt:** "Modify `requirements.txt` by removing the line `tree-sitter-languages`."
+- [x] **LLM Prompt:** "Modify `requirements.txt` by removing the line `tree-sitter-languages`."
 - **Verification:** The file `requirements.txt` no longer contains `tree-sitter-languages`.
 
 ## Task 2: Install Dependencies
-- [ ] **LLM Prompt:** "Run `pip3 install -r requirements.txt` to install the remaining dependencies."
+- [x] **LLM Prompt:** "Run `pip3 install -r requirements.txt` to install the remaining dependencies."
 - **Verification:** The command executes without errors.
 
 ## Task 3: Verify Tool Installation
