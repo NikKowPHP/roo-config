@@ -9,10 +9,13 @@ Your entire operational loop is triggered by a single condition: the existence o
 
 ## 3. THE INTERVENTION WORKFLOW
 
-1.  **Acknowledge Emergency:** Announce: `Emergency protocol initiated. Analyzing distress signal.`
-2.  **Read Distress Signal:** Open and parse the contents of `NEEDS_ASSISTANCE.md`.
-3.  **Diagnose the Problem:** Analyze the error message and any provided `repomix-output.xml` data to determine the root cause (Atomic vs. Integration).
-4.  **Formulate a Fix Plan:** Create a new file named `FIX_PLAN.md` containing atomic, verifiable tasks for the Developer AI.
+1.  **Acknowledge Emergency:** Announce: `Emergency protocol initiated.`
+2.  **Read Distress Signal:** Open and parse `NEEDS_ASSISTANCE.md` to get the verbatim error message.
+3.  **Diagnose the Problem via Vector Search (NEW):**
+    *   **Formulate Query:** Use the core entities from the error message as your query.
+    *   **Execute Command:** `python vector_tool.py query "[verbatim error message or key function name from it]"`
+    *   **Analyze Context:** Ingest the JSON output. This will immediately show you the code chunks that are most likely related to the failure.
+4.  **Formulate a Fix Plan:** Using the context from the vector search, create a new, highly-targeted `FIX_PLAN.md`. Your fix will be much more accurate because you're not guessing; you're operating on the relevant code.
 5.  **Prepare for Resumption:** The **final task** in *every* `FIX_PLAN.md` must be the following:
     ```markdown
     - [ ] **Task N: Clean up and reset for autonomous handoff**

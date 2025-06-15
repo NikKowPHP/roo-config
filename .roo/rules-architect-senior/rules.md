@@ -59,31 +59,25 @@ Upon activation, you must determine your operational mode by checking for signal
 
 ---
 
-### **2.3. PLANNING & VERIFICATION MODE (Generating the Code-Aware Blueprint)**
+### 2.3. PLANNING & VERIFICATION MODE (Generating the Code-Aware Blueprint)
 
-**Trigger:** This is your standard operational mode when no higher-priority signals are present.
+**Trigger:** This is your standard operational mode.
 
-1.  **Step 1: Codebase Analysis.**
-    *   **Execute Command:** Run `repomix`.
-    *   **Ingest Snapshot:** Read and parse `repomix-output.xml`. This is your ground truth.
+1.  **Step 1: Identify Current Master Task.**
+    *   Open `todos/master_development_plan.md` and find the first incomplete task (`[ ]`). This is your **Active Master Task**.
 
-2.  **Step 2: Identify Current Master Task.**
-    *   Open and read `todos/master_development_plan.md`.
-    *   Identify the first incomplete task (`[ ]`). This is your **Active Master Task**.
+2.  **Step 2: Semantic Discovery & Context Gathering (NEW)**
+    *   **Analyze Goal:** Read the Active Master Task to understand its high-level goal (e.g., "Implement User Authentication").
+    *   **Formulate Questions:** Formulate natural language questions to understand the existing codebase related to this goal.
+    *   **Execute Command:** `python vector_tool.py query "functions related to user sessions and database access"`
+    *   **Execute Command:** `python vector_tool.py query "existing UI components for forms and buttons"`
+    *   **Ingest Context:** Parse the JSON output from these commands. You now have a deep, semantic understanding of which files are relevant, preventing you from planning to re-create existing work.
 
 3.  **Step 3: Generate Context-Aware To-Do List.**
-    *   **Analyze Goal vs. Reality:** Compare the Active Master Task with your understanding of the codebase from `repomix-output.xml`.
-    *   **Semantic Discovery:**
-        - **Execute Command:** `python vector_tool.py query "Your natural language question about the code"`
-        - **Ingest Context:** Parse the JSON output from the command to understand which files and functions are relevant to your task.
-    *   **Generate Detailed Plan:** Create the full content for the to-do list file specified in the master task (e.g., `todos/dev_todo_phase_3.md`). The prompts must be atomic, generative, and code-aware.
-
-4.  **Step 4: Update Master Plan.**
-    *   After generating the detailed to-do list, update `todos/master_development_plan.md` by marking the Active Master Task as complete (`[x]`).
-
-5.  **Step 5: Loop or Conclude.**
-    *   If there are more incomplete tasks in the master plan, the loop will repeat.
-    *   If all tasks are complete, create `ARCHITECT_PLANNING_COMPLETE.md` and switch to `<mode>orchestrator-senior</mode>`.
+    *   **Cross-Reference:** Compare the Active Master Task with the context you just gathered.
+    *   **Generate Detailed Plan:** Create the detailed to-do list file (e.g., `todos/dev_todo_phase_3.md`). Your prompts must now be even more precise because you have context.
+        *   *Before (Bad):* "Create a login form."
+        *   *Now (Good):* "**Modify `src/components/auth/AuthForm.tsx`**: Based on our vector search, this component already exists. Add a new 'password' field to it. Then, **create a new server action in `src/actions/auth.ts`** that handles the database query for login, reusing the `db.findUser` function we found."
 
 ## 3. CRITICAL DIRECTIVES
 
