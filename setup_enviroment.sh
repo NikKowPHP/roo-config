@@ -113,11 +113,17 @@ echo "🐳 Starting Qdrant vector database via Docker Compose..."
 # Use 'docker compose' (with a space), which is the modern command.
 # The user might need to start a new shell if Docker was just installed.
 # We will run it with 'sudo' just in case the group permissions haven't propagated yet.
-if groups | grep &>/dev/null '\bdocker\b'; then
+if [ "$OS_TYPE" = "Linux" ]; then
+    if groups | grep &>/dev/null '\bdocker\b'; then
+        docker compose up --build -d
+    else
+        echo "Running 'docker compose' with sudo as user is not yet in the docker group for this session."
+        sudo docker compose up --build -d
+    fi
+elif [ "$OS_TYPE" = "macOS" ]; then
+    echo "🐳 Starting Docker services..."
     docker compose up --build -d
-else
-    echo "Running 'docker compose' with sudo as user is not yet in the docker group for this session."
-    sudo docker compose up --build -d
+    echo "⚠️ Ensure Docker Desktop is running (from Applications)"
 fi
 
 # --- Step 8: Initialize the Code Context Tool (CCT) ---
