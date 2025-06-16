@@ -6,6 +6,14 @@
 # It will exit immediately if any command fails.
 set -e
 
+# Detect OS
+OS="$(uname -s)"
+case "$OS" in
+    Linux*)     OS_TYPE="Linux" ;;
+    Darwin*)    OS_TYPE="macOS" ;;
+    *)          OS_TYPE="UNKNOWN"
+esac
+
 echo "--- Starting Project Environment Setup ---"
 
 # --- Step 1: Check for and Install Dependencies (for Ubuntu) ---
