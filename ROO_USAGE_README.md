@@ -22,7 +22,11 @@ Open your terminal in the project's root directory and run the following two com
 
 ```bash
 # Make the script executable (you only need to do this once)
-chmod +x setup_enviroment.sh && ./setup_enviroment.sh
+chmod +x setup_enviroment.sh && ./setup_enviroment.sh && 
+python3 -m venv .venv && source .venv/bin/activate
+
+
+
 ```
 
 The script will guide you through the process. Once it finishes, your Python environment is ready.
