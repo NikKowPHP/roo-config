@@ -24,42 +24,64 @@ command_exists() {
     command -v "$1" &> /dev/null
 }
 
-# Check for Python 3
-if ! command_exists python3 || ! command_exists python3-venv; then
-    echo "🐍 Python 3 and/or python3-venv not found. Attempting to install..."
-    sudo apt-get update
-    sudo apt-get install -y python3 python3-venv python3-pip
-    echo "✅ Python 3 installed."
-fi
+# Check and install dependencies based on OS
+if [ "$OS_TYPE" = "Linux" ]; then
+    # Ubuntu-specific installations
+    if ! command_exists python3 || ! command_exists python3-venv; then
+        echo "🐍 Python 3 and/or python3-venv not found. Attempting to install..."
+        sudo apt-get update
+        sudo apt-get install -y python3 python3-venv python3-pip
+        echo "✅ Python 3 installed."
+    fi
 
-# Check for Docker and Docker Compose Plugin
-if ! command_exists docker; then
-    echo "🐳 Docker not found. Attempting to install..."
-    # Add Docker's official GPG key:
-    sudo apt-get update
-    sudo apt-get install -y ca-certificates curl
-    sudo install -m 0755 -d /etc/apt/keyrings
-    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-    sudo chmod a+r /etc/apt/keyrings/docker.asc
+    if ! command_exists docker; then
+        echo "🐳 Docker not found. Attempting to install..."
+        # Add Docker's official GPG key:
+        sudo apt-get update
+        sudo apt-get install -y ca-certificates curl
+        sudo install -m 0755 -d /etc/apt/keyrings
+        sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+        sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-    # Add the repository to Apt sources:
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
+        # Add the repository to Apt sources:
+        echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+          $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+          sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sudo apt-get update
 
-    # Install Docker Engine, CLI, Containerd, and Docker Compose plugin
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    echo "✅ Docker and Docker Compose plugin installed."
+        # Install Docker Engine, CLI, Containerd, and Docker Compose plugin
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+        echo "✅ Docker and Docker Compose plugin installed."
 
-    # Add the current user to the 'docker' group to avoid using 'sudo' with Docker
-    echo "👤 Adding current user to the 'docker' group..."
-    sudo usermod -aG docker $USER
-    echo "⚠️ IMPORTANT: For the Docker group change to take effect, you must either"
-    echo "   1. Log out and log back in."
-    echo "   2. Start a new shell."
-    echo "   3. Or run 'newgrp docker' in this terminal to apply it temporarily."
+        # Add the current user to the 'docker' group
+        echo "👤 Adding current user to the 'docker' group..."
+        sudo usermod -aG docker $USER
+        echo "⚠️ IMPORTANT: For the Docker group change to take effect, you must either"
+        echo "   1. Log out and log back in."
+        echo "   2. Start a new shell."
+        echo "   3. Or run 'newgrp docker' in this terminal to apply it temporarily."
+    fi
+elif [ "$OS_TYPE" = "macOS" ]; then
+    # macOS-specific installations
+    if ! command_exists brew; then
+        echo "🍺 Homebrew not found. Installing..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
+    if ! command_exists python3; then
+        echo "🐍 Python 3 not found. Installing via Homebrew..."
+        brew install python@3.13
+        echo "✅ Python 3 installed."
+    fi
+
+    if ! command_exists docker; then
+        echo "🐳 Docker not found. Installing via Homebrew..."
+        brew install docker docker-compose
+        echo "✅ Docker and Docker Compose installed."
+        echo "⚠️ IMPORTANT: You need to install Docker Desktop from https://www.docker.com/products/docker-desktop/"
+        echo "   and ensure it's running before proceeding."
+    fi
 fi
 
 echo "✅ All dependencies are present."
