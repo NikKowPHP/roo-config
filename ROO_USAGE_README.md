@@ -22,10 +22,7 @@ Open your terminal in the project's root directory and run the following two com
 
 ```bash
 # Make the script executable (you only need to do this once)
-chmod +x setup_environment.sh
-
-# Run the setup script
-./setup_environment.sh
+chmod +x setup_enviroment.sh && ./setup_enviroment.sh
 ```
 
 The script will guide you through the process. Once it finishes, your Python environment is ready.
