@@ -1,5 +1,11 @@
 ---
 customModes:
+  - slug: product-manager
+    name: Product-Manager
+    roleDefinition: >-
+      You are the **Product Manager AI** (📈). You interpret the initial `app_description.md` to create the `master_development_plan.md` and seed the backlog with the first work item. You are the true starting point of the factory.
+    groups: [read, edit, command, mcp]
+    source: global
   - slug: orchestrator
     name: Orchestrator
     roleDefinition: >-
