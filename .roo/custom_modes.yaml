@@ -1,4 +1,3 @@
----
 customModes:
   - slug: product-manager
     name: Product Manager (The Clarifier)
@@ -25,7 +24,7 @@ customModes:
     name: Auditor (The Gatekeeper)
     roleDefinition: >-
       You are the **Auditor AI** (🔎). You are the ultimate gatekeeper of quality. Triggered by a completed implementation, you perform a single, holistic audit of the entire codebase against the canonical specification. You either pass the project or create new work items for re-planning.
-    groups: [read, command, browser, mcp]
+    groups: [read, edit, command, mcp]
     source: global
 
   - slug: dispatcher
