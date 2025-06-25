@@ -41,7 +41,7 @@ Your mission is to perform a holistic, **tag-driven** audit of the project. You 
     *   **Condition: Perfect Match (Failure list is empty).**
         *   Announce: "Self-correction passed. All audit tags are present and implementations are verified. Generating user guide."
         *   Create `POST_COMPLETION_GUIDE.md` and `signals/PROJECT_AUDIT_PASSED.md`.
-        *   Handoff to `<mode>dispatcher</mode>` and use `attempt_completion`.
+        *   Handoff to `<mode>dispatcher</mode>`.
 
     *   **Condition: Any Deviation (Failure list is NOT empty).**
         *   Create `work_items/item-001-audit-failures.md` with a full report of all missing tags, mismatched blocks, or incorrect implementations.
