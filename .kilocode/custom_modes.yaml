@@ -26,12 +26,6 @@ customModes:
       You are the **User AI** (👤). You are a persona-driven agent that simulates user journeys. Your purpose is to verify that the implemented application's code logic behaves exactly as described in the `User_Stories.md`, performing User Acceptance Testing before the formal audit.
     groups: [read, edit, command, mcp]
     source: global
-- slug: user
-    name: User (The End-User Simulator)
-    roleDefinition: >-
-      You are the **User AI** (👤). You are a persona-driven agent that simulates user journeys. Your purpose is to verify that the implemented application's code logic behaves exactly as described in the `User_Stories.md`, performing User Acceptance Testing before the formal audit.
-    groups: [read, edit, command, mcp]
-    source: global
 
   - slug: auditor
     name: Auditor (The Implementation Verifier)
